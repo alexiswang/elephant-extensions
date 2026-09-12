@@ -1,0 +1,25 @@
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Virtual environment
+.venv/
+
+# Generated model-output data — regenerate via the notebooks (OpenRouter API)
+misc/
+results/
+*.csv
+# ...except the vendored source dataset from the ELEPHANT paper (CC0 1.0)
+!data/elephant/AITA-NTA-FLIP_og_YTANTA.csv
+
+# Report exports — source of truth is report.md
+report.html
+report.pdf
+
+# OS
+.DS_Store
+ 
