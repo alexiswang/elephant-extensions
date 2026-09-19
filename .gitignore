@@ -15,6 +15,9 @@ results/
 *.csv
 # ...except the vendored source dataset from the ELEPHANT paper (CC0 1.0)
 !data/elephant/AITA-NTA-FLIP_og_YTANTA.csv
+# Human annotations are research inputs, not generated model output.
+!data/annotations/
+!data/annotations/fidelity_human_annotations.csv
 
 # Report exports — source of truth is report.md
 report.html

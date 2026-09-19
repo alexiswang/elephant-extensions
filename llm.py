@@ -69,7 +69,6 @@ async def process_single_sample_async(client, model, prompt, temperature, sample
                     'error': None
                 }
             except Exception as e:
-                # This only catches failures AFTER all retries exhausted
                 return {
                     'input_idx': input_idx,
                     'sample_idx': sample_idx,
@@ -109,7 +108,6 @@ async def batch_process_async(
 
         results = await tqdm_asyncio.gather(*tasks, desc=f"Processing {len(prompts)} questions")
 
-    # Organize results by question
     final_results = {}
     for result in results:
         input_idx = result['input_idx']
@@ -121,5 +119,4 @@ async def batch_process_async(
             }
         final_results[input_idx]['samples'].append(result)
 
-    # Convert to sorted list
     return [final_results[idx] for idx in sorted(final_results.keys())]
